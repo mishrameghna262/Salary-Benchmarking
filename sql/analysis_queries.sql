@@ -81,20 +81,6 @@ group by c.roles
 /*Q7 — Salary by experience band
 How does average salary vary across different experience bands and base roles ?*/
 
-select jt.base_role, case when s.min_experience<=1 then '0-1' 
-            when s.min_experience<=3 and s.min_experience>=2 then '2-3' 
-            when s.min_experience>=4 and s.min_experience<=6 then '4-6' 
-            else '7+yrs' end as salary_band, 
-avg(s.avg_salary_lpa) as average_Salary 
-from salary_benchmarks s join job_titles jt on s.job_title_id=jt.job_title_id
-group by case when s.min_experience<=1 then '0-1' 
-when s.min_experience<=3 and s.min_experience>=2 then '2-3' 
-when s.min_experience>=4 and s.min_experience<=6 then '4-6' 
-else '7+yrs' end ,  jt.base_role
-order by jt.base_role
-                                       /*or*/
-
-
 WITH exp_band AS (
     SELECT jt.base_role,s.company_id, s.avg_salary_lpa,
         CASE
