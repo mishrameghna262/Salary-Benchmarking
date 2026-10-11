@@ -17,7 +17,7 @@ Power BI file: `salary_benchmarking_dashboard.pbix` (open with Power BI Desktop)
 
 ## Dataset
 
-- **Source:** [Data Science Jobs In India](https://www.kaggle.com/) (Kaggle, by madhurpant), scraped from AmbitionBox. License: CC0 Public Domain.
+- **Source:** [Data Science Jobs In India](https://www.kaggle.com/datasets/madhurpant/data-science-jobs-in-india) (Kaggle, by madhurpant), scraped from AmbitionBox. License: CC0 Public Domain.
 - **Size:** 1,602 company-role benchmarks across 642 companies and 10 job titles, built from about 93,000 individual salary reports.
 - **Fields:** company, job title, minimum experience, average / minimum / maximum salary (₹ lakhs per annum) and the number of salary reports behind each benchmark.
 
