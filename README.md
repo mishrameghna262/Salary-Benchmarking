@@ -1,9 +1,10 @@
-# Salary-Benchmarking
 # India Data & Analytics Salary Benchmarking
 
 SQL Server + Power BI project analysing salary benchmarks for data and analytics roles in India: which roles pay what, how pay grows with experience, how much a "Senior" title adds, and which companies pay the most.
 
 ## Dashboard
+
+Power BI file: `salary_benchmarking_dashboard.pbix` (open with Power BI Desktop). It was built on a local SQL Server database; to refresh it, rebuild the database with the SQL scripts below.
 
 **Market Landscape**
 ![Market Landscape](01_market_landscape.png)
@@ -42,9 +43,9 @@ Star schema with one fact table:
 
 | File | What it does |
 |---|---|
-| `01_create_tables.sql` | Creates the three tables with primary and foreign keys |
-| `02_load_and_transform.sql` | Builds the dimensions and fact table from the raw staging table, using `ROW_NUMBER()` for keys and `CASE` / `REPLACE` to split seniority from the role name, then runs sanity checks |
-| `03_analysis_queries.sql` | Eight analysis questions using joins, CTEs, window functions (`DENSE_RANK`), `HAVING` and `CASE` bands |
+| `sql/01_create_tables.sql` | Creates the three tables with primary and foreign keys |
+| `sql/02_load_and_transform.sql` | Builds the dimensions and fact table from the raw staging table, using `ROW_NUMBER()` for keys and `CASE` / `REPLACE` to split seniority from the role name, then runs sanity checks |
+| `sql/03_analysis_queries.sql` | Eight analysis questions using joins, CTEs, window functions (`DENSE_RANK`), `HAVING` and `CASE` bands |
 
 Raw salary values arrive as text such as `7.8L` and are converted to numbers during import into the staging table.
 
